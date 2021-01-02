@@ -1,0 +1,17 @@
+{
+    "name": "dizatech/parsian_ipg",
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Omid Reza Vasheghani Farahani",
+            "email": "omidrezav@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Dizatech\\ParsianIpg\\": "src/"
+        }
+    }
+}
