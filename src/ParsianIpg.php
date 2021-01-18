@@ -23,7 +23,7 @@ class ParsianIpg{
 		$response = new \stdClass();
 		$status = $result->SalePaymentRequestResult->Status;
 		$token = $result->SalePaymentRequestResult->Token;
-		$message = $result->SalePaymentRequestResult->Message;
+		$message = $result->SalePaymentRequestResult->Message ?? NULL;
 		
         if( $status == 0 && $token > 0 ){
             $response->status = 'success';
@@ -48,8 +48,8 @@ class ParsianIpg{
 		
 		$response = new \stdClass();
 		$status = $result->ConfirmPaymentResult->Status;
-		$message = $result->ConfirmPaymentResult->Message;
-		$card_no_masked = $result->ConfirmPaymentResult->CardNumberMasked;
+		$message = $result->ConfirmPaymentResult->Message ?? NULL;
+		$card_no_masked = $result->ConfirmPaymentResult->CardNumberMasked ?? NULL;
 		$rrn = $result->ConfirmPaymentResult->RRN;
 		
 		if( $status == 0 ){
@@ -76,7 +76,7 @@ class ParsianIpg{
 		
 		$response = new \stdClass();
 		$status = $result->ReversalRequestResult->Status;
-		$message = $result->ReversalRequestResult->Message;
+		$message = $result->ReversalRequestResult->Message ?? NULL;
 		
 		if( $status == 0 ){
             $response->status = 'success';
